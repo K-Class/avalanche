@@ -11,7 +11,7 @@
 # Website: avalanche.continualai.org                                           #
 ################################################################################
 
-python="3.8"
+python="3.10"
 cuda_version="none"
 help=false
 
@@ -44,7 +44,7 @@ if [ "$help" = true ] ; then
     echo ''
     echo 'The scrip takes the following arguments:'
     echo ''
-    echo '   --python         set the python version. Can take the values [3.6, 3.7, 3.8, 3.9], default 3.8.'
+    echo '   --python         set the python version. Can take the values [3.6, 3.7, 3.8, 3.9, 3.10], default 3.8.'
     echo '   --cuda_version   set the cuda version. You have to check the current version of cuda installed on your system and pass it as argument. If cuda is not installed or you want to use cpu pass "none". Can take the values [9.2, 10.1, 10.2, 11.0, 11.1, none], default none.'
     echo '   --help           display this help and exit.'
     echo ''
@@ -57,8 +57,8 @@ fi
 echo "python version : $python";
 echo "cuda version : $cuda_version";
 
-if ! [[ "$python" =~ ^(3.6|3.7|3.8|3.9)$ ]]; then
-    echo "Select a python version between 3.6, 3.7, 3.8, 3.9"
+if ! [[ "$python" =~ ^(3.6|3.7|3.8|3.9|3.10)$ ]]; then
+    echo "Select a python version between 3.6, 3.7, 3.8, 3.9, 3.10"
     exit 1
 fi
 
@@ -70,13 +70,13 @@ fi
 conda create -n avalanche-dev-env python=$python -c conda-forge
 conda activate avalanche-dev-env
 if [[ "$cuda_version" = "none" ]]; then
-    if [[ "$python_version" = 3.9 ]]; then
+    if [[ "$python_version" = 3.10 ]]; then
         conda install pytorch torchvision cpuonly -c pytorch -c=conda-forge
     else
         conda install pytorch torchvision cpuonly -c pytorch
     fi
 else
-    if [[ "$python_version" = 3.9 || "$cuda_version" = 11.1 ]]; then
+    if [[ "$python_version" = 3.10 || "$cuda_version" = 11.1 ]]; then
         conda install pytorch torchvision cudatoolkit=$cuda_version -c pytorch -c=conda-forge
     else
         conda install pytorch torchvision cudatoolkit=$cuda_version -c pytorch
