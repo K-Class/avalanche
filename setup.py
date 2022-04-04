@@ -34,7 +34,7 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    python_requires='>=3.6,<3.10',
+    python_requires='>=3.6',
     install_requires=[
         'typing-extensions',
         'psutil',
@@ -55,6 +55,6 @@ setuptools.setup(
         'gdown',
         'ctrl-benchmark',
         'lvis',
-        'setuptools<=59.5.0'
+        'setuptools>=59.5.0'
     ]
 )
