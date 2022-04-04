@@ -10,7 +10,7 @@ source:
 
 requirements:
   build:
-    - python=3.8
+    - python=3.10
   run:
     - _libgcc_mutex=0.1=main
     - absl-py=0.9.0=py38_0
@@ -81,7 +81,7 @@ requirements:
     - pyparsing=2.4.7=py_0
     - pyqt=5.9.2=py38h05f1152_4
     - pysocks=1.7.1=py38_0
-    - python=3.8.3=hcff3b4d_0
+    - python=3.10.4-hbb2ffb3_0
     - python-dateutil=2.8.1=py_0
     - pytorch=1.5.0=py3.8_cuda10.2.89_cudnn7.6.5_0
     - pytorchcv=0.0.58=py38h39e3cac_0
